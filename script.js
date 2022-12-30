@@ -15,7 +15,7 @@ const transition = (nextImage = -1) => {
 
   imageDescription[currentImage].style.opacity = "0"; //imageDescription
   currentImage = nextImage < 0 ? (currentImage + 1) % imagesNumber : nextImage;
-  currentImage % 2 != 0 ?  firstDiv.style.backgroundSize = "150%" : firstDiv.style.backgroundSize = "100%"; //size
+  currentImage % 2 != 0 ?  firstDiv.style.backgroundSize = "115%" : firstDiv.style.backgroundSize = "100%"; //size
   imageDescription[currentImage].style.opacity = "1"; //imageDescription
   firstDiv.style.backgroundImage = `url(images/0${currentImage}.webp)`;
 };
