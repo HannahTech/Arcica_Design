@@ -66,8 +66,10 @@ body {
   height: 100%;
   background-image: url(images/00.jpg);
   background-size: cover;
+  background-size: 100%;
+  background-position: center;
   background-repeat: no-repeat;
-  transition: background-image 3.5s ease;
+  transition: background-image 3.5s ease, background-size 3.5s ease-in;
 }
 
 /* image description */
