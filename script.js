@@ -1,66 +1,51 @@
-const firstDiv = document.getElementById("first");
-const imageDescription = document
-  .getElementById("AllDescriptions")
-  .querySelectorAll(".imageDesc"); //
+const root = document.getElementById("root");
 
-let currentImage = 0;
-const imagesNumber = 6;
-const transitionTime = 4000;
+const elements = document.querySelectorAll(".images");
 
-const dots = Array.from(document.getElementsByClassName("dot"));
-imageDescription[currentImage].style.opacity = "1"; //imageDescription
-firstDiv.style.backgroundSize = "100%" //size
+elements[0].style.left = "0%";
+sttm1 = setTimeout(() => {
+  elements[0].style.transform = "scale(1.2)";
+  clearTimeout(sttm1);
+}, 100);
 
-const transition = (nextImage = -1) => {
+elements[1].style.left = "100%";
 
-  imageDescription[currentImage].style.opacity = "0"; //imageDescription
-  currentImage = nextImage < 0 ? (currentImage + 1) % imagesNumber : nextImage;
-  currentImage % 2 != 0 ?  firstDiv.style.backgroundSize = "115%" : firstDiv.style.backgroundSize = "100%"; //size
-  imageDescription[currentImage].style.opacity = "1"; //imageDescription
-  firstDiv.style.backgroundImage = `url(images/0${currentImage}.webp)`;
-};
+const numberOfImages = 7;
 
-let interval = setInterval(transition, transitionTime);
+currentImage = 0;
 
-dots.forEach((dot, index) => {
-  dot.addEventListener("click", () => {
-    clearInterval(interval);
-    transition(index);
-    interval = setInterval(transition, transitionTime);
-  });
-});
+setInterval(() => {
+  const elements = document.querySelectorAll(".images");
 
-// const projects = Array.from(document.getElementsByClassName("project"));
+  if (currentImage % 3 === 2) {
+    elements[0].style.left = "-100%";
+    elements[1].style.left = "0%";
+  } else {
+    elements[0].className = "images-no-transition";
+    elements[1].className = "images-no-transition";
+    elements[0].style.left = "-100%";
+    elements[1].style.left = "0%";
+    sttm2 = setTimeout(() => {
+      elements[0].className = "images";
+      elements[1].className = "images";
+      clearTimeout(sttm2);
+    }, 90);
+  }
 
-// const projectOffsets = projects.map((project) => {
-//   return project.offsetTop + project.offsetHeight;
-// });
+  sttm3 = setTimeout(() => {
+    currentImage = (currentImage + 1) % numberOfImages;
+    if (currentImage % 3 === 0) {
+      elements[1].style.transform = "scale(1.2)";
+    }
 
-// projects.forEach((project, index) => {
-//   project.style.backgroundImage = `url(images/3${index}.jpg)`;
-//   project.addEventListener("click", () => open("project.html"));
-//   // project.style.transform = "translate(0px, 100px)";
-// });
+    root.removeChild(elements[0]);
+    const newImage = document.createElement("img");
+    newImage.className = "images";
+    newImage.src = `images/0${(currentImage + 1) % numberOfImages}.webp`;
+    newImage.style.left = "100%";
 
-// window.addEventListener("scroll", () => {
-//   projects.forEach((project, index) => {
-//     if (innerHeight + scrollY >= projectOffsets[index]) {
-//       if (index % 2) {
-//         project.style.transition =
-//           "transform 1.5s ease 0.5s, opacity 1.5s ease 0.5s, background-size 1.5s ease";
-//       } else {
-//         project.style.transition =
-//           "transform 1.5s ease, opacity 1.5s ease, background-size 1.5s ease";
-//       }
-//       project.style.opacity = "1";
-//       project.style.transform = "translate(0px, -100px)";
-//     }
-//   });
-// });
+    root.appendChild(newImage);
 
-// Active Menu
-const menuContainer = document.querySelector(".menu");
-
-menuContainer.addEventListener("click", function () {
-  this.classList.toggle("active");
-});
+    clearTimeout(sttm3);
+  }, 1100);
+}, 3000);
