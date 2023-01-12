@@ -37,6 +37,10 @@ setInterval(() => {
     if (currentImage % 3 === 0) {
       elements[1].style.transform = "scale(1.2)";
     }
+    if (currentImage % 3 === 2) {
+      elements[1].style.scale = "1.2";
+      elements[1].style.transform = "translateX(110px)";
+    }
 
     root.removeChild(elements[0]);
     const newImage = document.createElement("img");
@@ -48,4 +52,4 @@ setInterval(() => {
 
     clearTimeout(sttm3);
   }, 1100);
-}, 3000);
+}, 5000);

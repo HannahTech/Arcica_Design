@@ -14,11 +14,69 @@ body {
   overflow: hidden;
 }
 
-.images {
+.logo{
+  position: relative;
+  writing-mode: tb-rl;
+  text-align: center;
   position: absolute;
-  transition: left 1s ease, transform 1s ease;
+  padding-top: 18%;
+  font-size: 22px;
+  letter-spacing: 30px;
+  color: white;
+  
+}
+
+.menu{
+  width: 15%;
+  height: 100%;
+  z-index: 10;
+  position: relative;
+  text-align: left;
+  padding: 10px;
+  background-color: white;
+  opacity: 0;
+  translate: -100px;
+}
+
+.menu:hover{
+  opacity: 1;
+  translate: 0px;
+  transition: opacity 1.5s ease, translate 1.5s ease;
+}
+
+span{
+  writing-mode: tb-rl;
+  text-align: center;
+  position: absolute;
+  padding-top: 30%;
+  font-size: 22px;
+  letter-spacing: 30px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  display: block;
+  text-align: right;
+  padding: 15px;
+}
+
+a:hover{
+  opacity: 50%;
+  scale: 1.1;
+  transition: opacity 0.3s ease, scale 1s ease;
+}
+
+.images {
+  height: 100%;
+  width: 100%;
+  z-index: -5;
+  position: absolute;
+  transition: left 1s ease, transform 5s ease;
 }
 
 .images-no-transition {
+  height: 100%;
+  width: 100%;
   position: absolute;
 }
