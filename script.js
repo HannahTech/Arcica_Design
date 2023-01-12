@@ -17,6 +17,9 @@ currentImage = 0;
 setInterval(() => {
   const elements = document.querySelectorAll(".images");
 
+  if (currentImage % 3 === 1) {
+    elements[1].style.scale = "1.2";
+  }
   if (currentImage % 3 === 2) {
     elements[0].style.left = "-100%";
     elements[1].style.left = "0%";
@@ -38,7 +41,6 @@ setInterval(() => {
       elements[1].style.transform = "scale(1.2)";
     }
     if (currentImage % 3 === 2) {
-      elements[1].style.scale = "1.2";
       elements[1].style.transform = "translateX(110px)";
     }
 
