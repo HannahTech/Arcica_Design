@@ -1,0 +1,13 @@
+1- For now, we just wish to focus on the background loop
+
+2- The slide function of the loop is good. Lets keep
+
+3- The zoom is too fast, it must be a lot slower, (similar to sample webpage) and it must start immediately after the image appears. No pause, no gentle start and no gentle stop.
+
+4- The shif function (image move) is too fast.  Must be a lot slower, only shift from right to left, no pause no gentle start or gentle stop.
+
+5- no still image please
+
+6- Please make a loop out of the 3 functions. (Slide - Zoom - Shift) and add as many photos as possible.
+
+7- Random function, random image

@@ -1,0 +1,6 @@
+node_modules
+static/images
+static/videos
+
+.env
+google.json

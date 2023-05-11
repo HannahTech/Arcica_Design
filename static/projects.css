@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400i,600,700,800&display=swap");
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0px;
+  font-family: "Open Sans", Helvetica, Arial;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  /* overflow: hidden; */
+}
+
+.company_name{
+  font-size: 22px;
+  letter-spacing: 15px;
+  background-color: white;
+  padding: 2.5%;
+}
+
+.company_name:hover{
+  color: dimgrey;
+}
+
+/* projects style */
+#projects {
+  height: 150%;
+  width: 100%;
+}
+
+.project {
+  width: 49.83%;
+  height: 29%;
+  display: inline-block;
+  position: relative;
+  opacity: 1;
+  background-size:190%;
+  background-position: center;
+  transition: opacity 1.5s ease, background-size 2s ease;
+}
+
+.project:hover {
+  box-shadow: inset 0px 5px 10px 0px rgb(30, 30, 30, 0.5);
+  background-size: 200%;
+  opacity: 0.4;
+  outline: 1px solid black;
+  outline-offset: -60px;
+  transition: opacity 1.5s ease, background-size 2s ease;
+}
+
+span{
+  width: 49.83%;
+  text-align: center;
+  color: black;
+  position: absolute;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 8%;
+}
+
+.sub-text{
+  margin-top: 40px;
+  font-size: 13px;
+  font-weight: 200;
+  margin-top: 11%;
+}
