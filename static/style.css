@@ -70,12 +70,12 @@ a:hover {
 .images {
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   transition: left 1s ease, transform 20s ease;
 }
 
 .images-no-transition {
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
 }

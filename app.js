@@ -92,7 +92,7 @@ const syncWithGoogleDrive = async () => {
     );
 
     // {
-    //   access_token: 'ya29.a0AWY7CknFgvjRGmyAAVfTGU5WGuvwauBdXNzkuScXk2ZPuZinMQ6pBmL9690A4gQnVzuWtC81NSda6cOtoqmkI6haxithuVzFG7m1JRnnSBBG4_NH2d7XfgmaD_aoW3uoTVsZZ6gRXYA0X5_Sjo26NpaljsrF0kpJaCgYKAZ8SARMSFQG1tDrpM0eH8iw3mjB5BEntZUO2UQ0167',
+    //   access_token: '',
     //   expires_in: 3599,
     //   scope: 'https://www.googleapis.com/auth/drive.readonly',
     //   token_type: 'Bearer'
@@ -123,7 +123,7 @@ const syncWithGoogleDrive = async () => {
   //     {
   //       kind: 'drive#file',
   //       mimeType: 'application/vnd.google-apps.folder',
-  //       id: '1D_Y64c461L7bD1osePKRD4t29vmx20tQ',
+  //       id: '',
   //       name: 'images'
   //     }
   //   ]
@@ -153,13 +153,13 @@ const syncWithGoogleDrive = async () => {
   //     {
   //       kind: 'drive#file',
   //       mimeType: 'image/jpeg',
-  //       id: '146cy_kJy8nIqhvKc85jUmWm03tPX7lU_',
+  //       id: '',
   //       name: '00.jpg'
   //     },
   //     {
   //       kind: 'drive#file',
   //       mimeType: 'image/jpeg',
-  //       id: '18cHzAOtFcBubheuzzwJ0bsa62d1bgiJ6',
+  //       id: '',
   //       name: '01.jpg'
   //     }
   //   ]
@@ -228,7 +228,7 @@ const syncWithGoogleDrive = async () => {
 // step 1
 
 // https://accounts.google.com/o/oauth2/v2/auth?
-// client_id=549095856330-nuh79ihl6mfrq0f9mlj6hsofnm0m00pv.apps.googleusercontent.com&
+// client_id= &
 // scope=https%3A//www.googleapis.com/auth/drive.readonly&
 // response_type=code&
 // redirect_uri=https%3A//oauth2.arcica.com/code&
@@ -239,9 +239,9 @@ const syncWithGoogleDrive = async () => {
 
 // const url = 'https://oauth2.googleapis.com/token'
 // const data = {
-//     code:"4/0AbUR2VPSJo70lzO2_FcvDxAe6oZ-D7LLL0BSDsguQ8gy2j1YfMk1aMDlqGibB8cc42PDlw",
-//     client_id:"549095856330-nuh79ihl6mfrq0f9mlj6hsofnm0m00pv.apps.googleusercontent.com",
-//     client_secret:"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",
+//     code:"",
+//     client_id:"",
+//     client_secret:"",
 //     redirect_uri:"https://oauth2.arcica.com/code",
 //     grant_type:"authorization_code"
 //     };
@@ -261,7 +261,7 @@ const syncWithGoogleDrive = async () => {
 
 // result without propmpt=consent
 // {
-//     access_token: 'ya29.a0AWY7CkmfGJqYxZ4DV6EIBaT3YOlqtcQya3G7icKuEyzdujiyh6BXsMIJqp4cnkzNzUewYDhM5mUBrBiuBg3NQK8w8q7H_HMtyJ1dt0zIyejlm5Z_KWo1h60oL0EolA82dEGE3GvSiebXbgHMMSY7iPhzpPXuaCgYKAYMSARMSFQG1tDrp_d67UivkkXcQqHpLARcpTw0163',
+//     access_token: '',
 //     expires_in: 3599,
 //     scope: 'https://www.googleapis.com/auth/drive.readonly',
 //     token_type: 'Bearer'
@@ -269,9 +269,9 @@ const syncWithGoogleDrive = async () => {
 
 // result with propmpt=consent
 // {
-//     access_token: 'ya29.a0AWY7Ckn5wzJvOAAxK3gSABC7GqXhdmVEYgV4JVMXiBiQd_JFteHJ3PoHelJovq9wK-SY2X7X7pjW1Z8QJmEklfrlRUsgnGh_jgUw-bwo4N5IDgOycZxLDuRYVQC37vRZ_6YBUuyJmfcDqeBsQ4-BX-Y980uhaCgYKAZMSARMSFQG1tDrpwduF7eW3nFdlSV9APRX7tg0163',
+//     access_token: '',
 //     expires_in: 3599,
-//     refresh_token: '1//01djkFrX09A9jCgYIARAAGAESNwF-L9IrDp8TG-zyKojBfXvi1lBCzdQWmEqTWzeEPyZ0TJ3WVx5iisr-VYjLnQKbloxPey_sQeE',
+//     refresh_token: '',
 //     scope: 'https://www.googleapis.com/auth/drive.readonly',
 //     token_type: 'Bearer'
 //   }

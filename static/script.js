@@ -25,35 +25,18 @@ setInterval(() => {
   if (currentImageIndex % 3 === 1) {
     elements[1].style.scale = "1.2";
 
-
-
-
     elements[1].style.display = "block";
     video.style.display = "none";
     video.pause();
-
-
-
   }
   if (currentImageIndex % 3 === 2) {
     elements[0].style.left = "-100%";
     elements[1].style.left = "0%";
 
-
-
-
     elements[1].style.display = "block";
     video.style.display = "none";
     video.pause();
-
-
-
-
   } else {
-
-
-
-
     elements[1].style.display = "none";
 
     video.src = `videos/${currentVideoNumber}.mp4`;
@@ -61,13 +44,6 @@ setInterval(() => {
 
     video.style.display = "block";
     video.play();
-
-
-
-
-
-
-
 
     elements[0].className = "images-no-transition";
     elements[1].className = "images-no-transition";
@@ -83,38 +59,15 @@ setInterval(() => {
   sttm3 = setTimeout(() => {
     currentImageIndex = (currentImageIndex + 1) % images.length;
 
-    // if (currentImageIndex % 3 === 1) {
-    //   elements[1].style.display = "none";
-
-    //   video.src = `videos/${currentVideoNumber}.mp4`;
-    //   currentVideoNumber = (currentVideoNumber + 1) % 5;
-
-    //   video.style.display = "block";
-    //   video.play();
-    // } else {
-    //   elements[1].style.display = "block";
-    //   video.style.display = "none";
-    //   video.pause();
-    // }
-
     if (currentImageIndex % 3 === 0) {
       elements[1].style.transform = "scale(1.2)";
     }
     if (currentImageIndex % 3 === 2) {
       elements[1].style.transform = "translateX(-110px)";
 
-
-
-
       elements[1].style.display = "block";
       video.style.display = "none";
       video.pause();
-
-
-
-
-
-
     }
 
     root.removeChild(elements[0]);
@@ -128,7 +81,6 @@ setInterval(() => {
     clearTimeout(sttm3);
   }, 1100);
 }, 5000);
-
 
 // const image = temp1
 
