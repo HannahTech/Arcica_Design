@@ -10,10 +10,9 @@ elements[0].src = "images/" + images[0];
 elements[1].src = "images/" + images[1];
 
 elements[0].style.left = "0%";
-sttm1 = setTimeout(() => {
+elements[0].addEventListener("load", () => {
   elements[0].style.transform = "scale(1.2)";
-  clearTimeout(sttm1);
-}, 100);
+});
 
 elements[1].style.left = "100%";
 
@@ -49,14 +48,14 @@ setInterval(() => {
     elements[1].className = "images-no-transition";
     elements[0].style.left = "-100%";
     elements[1].style.left = "0%";
-    sttm2 = setTimeout(() => {
+    sttm1 = setTimeout(() => {
       elements[0].className = "images";
       elements[1].className = "images";
-      clearTimeout(sttm2);
+      clearTimeout(sttm1);
     }, 90);
   }
 
-  sttm3 = setTimeout(() => {
+  sttm2 = setTimeout(() => {
     currentImageIndex = (currentImageIndex + 1) % images.length;
 
     if (currentImageIndex % 3 === 0) {
@@ -78,7 +77,7 @@ setInterval(() => {
 
     root.appendChild(newImage);
 
-    clearTimeout(sttm3);
+    clearTimeout(sttm2);
   }, 1100);
 }, 5000);
 
