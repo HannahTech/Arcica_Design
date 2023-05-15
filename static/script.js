@@ -1,95 +1,95 @@
-const root = document.getElementById("root");
+let slideIndex = 0;
 
-const elements = document.querySelectorAll(".images");
+const videos = ["8.mp4", "7.mp4", "5.mp4", "2.mp4"];
 
-const video = document.getElementById("video");
-video.style.display = "none";
-let currentVideoNumber = 0;
+const slideshowContainer = document.querySelector(".slideshow-container");
+let j = 0;
 
-elements[0].src = "images/" + images[0];
-elements[1].src = "images/" + images[1];
+for (let i = 0; i < images.length || i < videos.length; i++) {
+  const slide = document.createElement("div");
+  slide.classList.add("slideshow-slide");
 
-elements[0].style.left = "0%";
-elements[0].addEventListener("load", () => {
-  elements[0].style.transform = "scale(1.2)";
+  if (i % 3 == 0) {
+    const img = document.createElement("img");
+    img.src = `images/${images[i]}`;
+    img.classList.add("overlay");
+    slide.appendChild(img);
+  } else if (i % 3 == 1) {
+    const img = document.createElement("img");
+    img.src = `images/${images[i]}`;
+    img.classList.add("move_left");
+    slide.appendChild(img);
+  } else if (i % 3 == 2) {
+    const video = document.createElement("video");
+    video.src = `videos/${videos[j]}`;
+    video.playbackRate = 0.6;
+    video.autoplay = true;
+    video.loop = true;
+    video.muted = true;
+    slide.appendChild(video);
+    j++;
+  }
+
+  slideshowContainer.appendChild(slide);
+}
+const slides = document.getElementsByClassName("slideshow-slide");
+
+function showSlides() {
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
+    slides[i].querySelectorAll("img.overlay").forEach((img) => img.remove());
+    slides[i].querySelectorAll("img.move_left").forEach((img) => img.remove());
+    const videos = slides[i].querySelectorAll("video");
+    for (let j = 0; j < videos.length; j++) {
+      videos[j].pause();
+      videos[j].currentTime = 0;
+    }
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+
+  const currentSlide = slides[slideIndex - 1];
+  currentSlide.classList.add("active");
+
+  if (slideIndex % 3 == 1) {
+    const overlay = document.createElement("img");
+    overlay.classList.add("overlay");
+    overlay.src = `images/${images[slideIndex - 1]}`;
+    currentSlide.appendChild(overlay);
+    setTimeout(showSlides, 5000);
+  } else if (slideIndex % 3 == 2) {
+    const move_left = document.createElement("img");
+    move_left.classList.add("move_left");
+    move_left.src = `images/${images[slideIndex - 1]}`;
+    currentSlide.appendChild(move_left);
+    setTimeout(showSlides, 5000);
+  } else if (slideIndex % 3 == 0) {
+    const currentVideo = currentSlide.querySelectorAll("video")[0];
+    currentVideo.style.display = "block";
+    currentVideo.play();
+    setTimeout(showSlides, 7000);
+  }
+}
+
+showSlides();
+
+const logo = document.querySelector(".logo");
+const menu = document.querySelector(".menu");
+
+logo.addEventListener("mouseenter", () => {
+  menu.style.opacity = 0.75;
+  menu.style.left = "0";
+  setTimeout(() => {
+    logo.style.color = "black";
+  }, 50);
 });
 
-elements[1].style.left = "100%";
-
-let currentImageIndex = 0;
-
-setInterval(() => {
-  const elements = document.querySelectorAll(".images");
-
-  if (currentImageIndex % 3 === 1) {
-    elements[1].style.scale = "1.2";
-
-    elements[1].style.display = "block";
-    video.style.display = "none";
-    video.pause();
-  }
-  if (currentImageIndex % 3 === 2) {
-    elements[0].style.left = "-100%";
-    elements[1].style.left = "0%";
-
-    elements[1].style.display = "block";
-    video.style.display = "none";
-    video.pause();
-  } else {
-    elements[1].style.display = "none";
-
-    video.src = `videos/${currentVideoNumber}.mp4`;
-    currentVideoNumber = (currentVideoNumber + 1) % 5;
-
-    video.style.display = "block";
-    video.play();
-
-    elements[0].className = "images-no-transition";
-    elements[1].className = "images-no-transition";
-    elements[0].style.left = "-100%";
-    elements[1].style.left = "0%";
-    sttm1 = setTimeout(() => {
-      elements[0].className = "images";
-      elements[1].className = "images";
-      clearTimeout(sttm1);
-    }, 90);
-  }
-
-  sttm2 = setTimeout(() => {
-    currentImageIndex = (currentImageIndex + 1) % images.length;
-
-    if (currentImageIndex % 3 === 0) {
-      elements[1].style.transform = "scale(1.2)";
-    }
-    if (currentImageIndex % 3 === 2) {
-      elements[1].style.transform = "translateX(-110px)";
-
-      elements[1].style.display = "block";
-      video.style.display = "none";
-      video.pause();
-    }
-
-    root.removeChild(elements[0]);
-    const newImage = document.createElement("img");
-    newImage.className = "images";
-    newImage.src = "images/" + images[(currentImageIndex + 1) % images.length];
-    newImage.style.left = "100%";
-
-    root.appendChild(newImage);
-
-    clearTimeout(sttm2);
-  }, 1100);
-}, 5000);
-
-// const image = temp1
-
-// // Set up a transitionend event listener
-// image.addEventListener('transitionend', () => {
-//   // The first transition has ended, now trigger the second one
-//   image.style.transition = 'transform 2s';
-//   image.style.transform = 'scale(0.5)';
-// });
-
-// // Start the first transition
-// image.style.transition = 'left 2s';
-// image.style.left = '200px';
+menu.addEventListener("mouseleave", () => {
+  setTimeout(() => {
+    menu.style.opacity = 0;
+    menu.style.left = "-13%";
+    logo.style.color = "white";
+  }, 100);
+});

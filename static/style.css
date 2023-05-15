@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400i,600,700,800&display=swap");
 
-html {
-  height: 100%;
-}
-
 body {
   height: 100%;
   margin: 0px;
@@ -12,44 +8,46 @@ body {
   -webkit-font-smoothing: antialiased;
   user-select: none;
   overflow: hidden;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 100%;
+  z-index: 6;
 }
 
 .logo {
+  z-index: 15;
   position: absolute;
   writing-mode: tb-rl;
   text-align: center;
-  padding-top: 18%;
+  padding-top: 40%;
   font-size: 22px;
   letter-spacing: 30px;
   color: white;
+  transition: color 0.5s ease;
 }
 
 .menu {
   width: 13%;
   height: 100%;
   z-index: 10;
-  position: relative;
+  position: fixed;
   text-align: left;
   padding: 10px;
-  background-color: white;
+  background-color: rgba(255, 255, 255);
   opacity: 0;
-  translate: -100px;
-  transition: opacity 1.5s ease, translate 1.5s ease;
-}
-
-.menu:hover {
-  opacity: 0.75;
-  translate: 0px;
-  transition: opacity 1.5s ease, translate 1.5s ease;
-}
-
-span {
-  writing-mode: tb-rl;
-  text-align: center;
-  position: absolute;
-  padding-top: 30%;
-  font-size: 22px;
-  letter-spacing: 30px;
+  left: -13%;
+  right: -13%;
+  transition: opacity 1.5s ease, left 1.5s ease, right 1.5s ease;
 }
 
 a {
@@ -58,24 +56,84 @@ a {
   display: block;
   text-align: right;
   padding: 15px;
-  transition: opacity 0.3s ease, scale 1s ease;
+  transition: opacity 0.3s ease, transform 0.5s ease;
+  transform-origin: right center;
 }
 
 a:hover {
   opacity: 50%;
-  scale: 1.08;
-  transition: opacity 0.3s ease, scale 1s ease;
+  transform: scale(1.08);
+  transition: opacity 0.3s ease, transform 0.5s ease;
 }
 
-.images {
+.slideshow-container {
+  position: relative;
   height: 100%;
-  width: 100%;
-  position: fixed;
-  transition: left 1s ease, transform 20s ease;
+  overflow: hidden;
 }
 
-.images-no-transition {
-  height: 100%;
-  width: 100%;
+.slideshow-slide img,
+.slideshow-slide video {
+  z-index: 1;
   position: fixed;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+.slideshow-slide.active img,
+.slideshow-slide.active video {
+  z-index: 2;
+  opacity: 1;
+}
+
+.slideshow-slide.active img.overlay {
+  z-index: 3;
+  transform: scale(1);
+  animation: scale 7s forwards;
+}
+
+.slideshow-slide.active img.move_left {
+  z-index: 4;
+  opacity: 0;
+  right: 0;
+  width: 110%;
+  min-height: 100%;
+  animation: slide 3s forwards, move-left 7s forwards;
+}
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes move-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100px);
+  }
 }
