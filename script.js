@@ -28,7 +28,6 @@ const allImages = [
   "143-ArcicaVynerRd.jpg",
   "165-ArcicaVynerRd.jpg",
   "2.jpg",
-  "23.jpg",
   "23MIST-6323S2.jpg",
   "23MIST-6481S2.jpg",
   "23MIST-6495S2.jpg",
