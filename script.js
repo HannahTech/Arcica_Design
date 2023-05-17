@@ -130,6 +130,7 @@ function showSlides() {
     for (let j = 0; j < videos.length; j++) {
       videos[j].pause();
       videos[j].currentTime = 0;
+      videos[j].style.opacity = "0";
     }
   }
   slideIndex++;
@@ -165,6 +166,7 @@ function showSlides() {
     const currentVideo = currentSlide.querySelectorAll("video")[0];
     currentVideo.style.display = "block";
     currentVideo.play();
+    fadeIn(currentVideo, 500);
     setTimeout(function () {
       fadeOut(currentVideo, 2000, function () {
         currentVideo.pause();
