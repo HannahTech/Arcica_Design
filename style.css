@@ -95,8 +95,10 @@ a:hover {
 
 .slideshow-slide.active img.overlay {
   z-index: 3;
+  opacity: 0;
   transform: scale(1);
   animation: scale 7s forwards;
+  transition: opacity 2s ease;
 }
 
 .slideshow-slide.active img.move_left {
@@ -130,10 +132,11 @@ a:hover {
 }
 
 @keyframes move-left {
-  from {
+  0% {
     transform: translateX(0);
   }
-  to {
+  100% {
     transform: translateX(-100px);
+    animation-timing-function: ease-out;
   }
 }

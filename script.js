@@ -108,7 +108,7 @@ for (let i = 0; i < Math.max(images.length, videos.length); i++) {
   } else if (i % 3 == 2) {
     const video = document.createElement("video");
     video.src = `videos/${videos[j]}`;
-    video.playbackRate = 0.9;
+    // video.playbackRate = 0.9;
     video.autoplay = true;
     video.loop = true;
     video.muted = true;
@@ -144,20 +144,67 @@ function showSlides() {
     const overlay = document.createElement("img");
     overlay.classList.add("overlay");
     overlay.src = `images/${images[slideIndex - 1]}`;
+    overlay.style.opacity = "0";
     currentSlide.appendChild(overlay);
+    fadeIn(overlay, 2000);
+    // setTimeout(function () {
+    //   fadeOut(currentSlide, 200, function () {
+    //     showSlides();
+    //   });
+    // }, 5000);
     setTimeout(showSlides, 5000);
   } else if (slideIndex % 3 == 2) {
     const move_left = document.createElement("img");
     move_left.classList.add("move_left");
     move_left.src = `images/${images[slideIndex - 1]}`;
+    move_left.style.opacity = "0";
     currentSlide.appendChild(move_left);
+    fadeIn(move_left, 2000);
     setTimeout(showSlides, 5000);
   } else if (slideIndex % 3 == 0) {
     const currentVideo = currentSlide.querySelectorAll("video")[0];
     currentVideo.style.display = "block";
     currentVideo.play();
-    setTimeout(showSlides, 7000);
+    setTimeout(function () {
+      fadeOut(currentVideo, 2000, function () {
+        currentVideo.pause();
+        currentVideo.style.display = "none";
+        showSlides();
+      });
+    }, 5000);
   }
+}
+
+function fadeIn(element, duration) {
+  let start = null;
+  element.style.opacity = "0";
+
+  function step(timestamp) {
+    if (!start) start = timestamp;
+    const progress = timestamp - start;
+    element.style.opacity = `${Math.min(progress / duration, 1)}`;
+    if (progress < duration) {
+      window.requestAnimationFrame(step);
+    }
+  }
+
+  window.requestAnimationFrame(step);
+}
+function fadeOut(element, duration, callback) {
+  let start = null;
+
+  function step(timestamp) {
+    if (!start) start = timestamp;
+    const progress = timestamp - start;
+    element.style.opacity = `${Math.max(1 - progress / duration, 0)}`;
+    if (progress < duration) {
+      window.requestAnimationFrame(step);
+    } else {
+      if (callback) callback();
+    }
+  }
+
+  window.requestAnimationFrame(step);
 }
 
 showSlides();
