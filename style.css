@@ -1,10 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400i,600,700,800&display=swap");
+@import url(//db.onlinewebfonts.com/c/4b5ae315f5df148f0ab479a7cedc9832?family=ISOCPEUR);
+
+@font-face {
+  font-family: "ISOCPEUR";
+  src: url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.eot");
+  src: url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.svg#ISOCPEUR")
+      format("svg");
+}
 
 body {
   height: 100%;
   margin: 0px;
   background-color: rgb(30, 30, 30);
-  font-family: "Open Sans", Helvetica, Arial;
+  font-family: "Isocpeur", Helvetica, Arial;
   -webkit-font-smoothing: antialiased;
   user-select: none;
   overflow: hidden;
@@ -25,6 +41,86 @@ body::before {
 }
 
 .logo {
+  z-index: 10;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  color: #fff;
+  font-family: "Isocpeur", sans-serif;
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+
+#logoText {
+  font-size: 34px;
+  letter-spacing: 14px;
+  font-weight: 800;
+}
+
+#subText {
+  font-size: 18px;
+  margin-top: 7px;
+  font-weight: 580;
+  font-size: 16px;
+  letter-spacing: 3.75px;
+}
+
+.logo.show {
+  opacity: 1;
+}
+
+.menu.show {
+  opacity: 1;
+}
+
+.social-icons.show {
+  opacity: 1;
+}
+
+.menu {
+  z-index: 10;
+  position: fixed;
+  height: 6%;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+
+.menu-item {
+  z-index: 20;
+  margin: 0 25px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 7px;
+}
+
+.social-icons {
+  z-index: 20;
+  position: fixed;
+  bottom: 15px;
+  right: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+
+.social-icon {
+  z-index: 20;
+  margin-bottom: 8px;
+  color: #fff;
+  font-size: 18px;
+}
+
+/* 
+.logo {
   z-index: 15;
   position: absolute;
   writing-mode: tb-rl;
@@ -34,7 +130,7 @@ body::before {
   letter-spacing: 30px;
   color: white;
   transition: color 0.5s ease;
-}
+} 
 
 .menu {
   width: 13%;
@@ -71,7 +167,7 @@ a:hover {
   height: 100%;
   overflow: hidden;
 }
-
+*/
 .slideshow-slide img,
 .slideshow-slide video {
   z-index: 1;
@@ -97,7 +193,7 @@ a:hover {
   z-index: 3;
   opacity: 0;
   transform: scale(1);
-  animation: scale 7s forwards;
+  animation: scale 7s linear forwards;
   transition: opacity 2s ease;
 }
 
@@ -107,7 +203,7 @@ a:hover {
   right: 0;
   width: 110%;
   min-height: 100%;
-  animation: slide 3s forwards, move-left 7s forwards;
+  animation: slide 3s forwards, move-left 7s linear forwards;
 }
 
 @keyframes slide {
@@ -137,6 +233,6 @@ a:hover {
   }
   100% {
     transform: translateX(-100px);
-    animation-timing-function: ease-out;
+    /* animation-timing-function: linear; */
   }
 }

@@ -215,21 +215,54 @@ showSlides();
 //   console.error("Error fetching image filenames:", error);
 // });
 
+// const logo = document.querySelector(".logo");
+// const menu = document.querySelector(".menu");
+
+// logo.addEventListener("mouseenter", () => {
+//   menu.style.opacity = 0.75;
+//   menu.style.left = "0";
+//   setTimeout(() => {
+//     logo.style.color = "black";
+//   }, 50);
+// });
+
+// menu.addEventListener("mouseleave", () => {
+//   setTimeout(() => {
+//     menu.style.opacity = 0;
+//     menu.style.left = "-13%";
+//     logo.style.color = "white";
+//   }, 100);
+// });
+
 const logo = document.querySelector(".logo");
 const menu = document.querySelector(".menu");
+const social = document.querySelector(".social-icons");
+let timeout;
 
-logo.addEventListener("mouseenter", () => {
-  menu.style.opacity = 0.75;
-  menu.style.left = "0";
-  setTimeout(() => {
-    logo.style.color = "black";
-  }, 50);
+function showElements() {
+  logo.classList.add("show");
+  menu.classList.add("show");
+  social.classList.add("show");
+}
+
+function hideElements() {
+  logo.classList.remove("show");
+  menu.classList.remove("show");
+  social.classList.remove("show");
+}
+
+document.addEventListener("mousemove", function () {
+  clearTimeout(timeout);
+  showElements();
+
+  timeout = setTimeout(function () {
+    hideElements();
+  }, 800);
 });
 
-menu.addEventListener("mouseleave", () => {
-  setTimeout(() => {
-    menu.style.opacity = 0;
-    menu.style.left = "-13%";
-    logo.style.color = "white";
-  }, 100);
+document.addEventListener("mouseout", function () {
+  clearTimeout(timeout);
+  timeout = setTimeout(function () {
+    hideElements();
+  }, 800);
 });
