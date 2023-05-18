@@ -48,7 +48,7 @@ body::before {
   color: #fff;
   font-family: "Isocpeur", sans-serif;
   opacity: 0;
-  transition: opacity 0.8s;
+  transition: opacity 1s;
 }
 
 #logoText {
@@ -86,7 +86,7 @@ body::before {
   bottom: 0;
   color: #fff;
   opacity: 0;
-  transition: opacity 0.8s;
+  transition: opacity 1s;
 }
 
 .menu-item {
@@ -109,7 +109,7 @@ body::before {
   align-items: flex-end;
   color: #fff;
   opacity: 0;
-  transition: opacity 0.8s;
+  transition: opacity 1s;
 }
 
 .social-icon {
