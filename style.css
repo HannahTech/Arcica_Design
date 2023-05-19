@@ -193,7 +193,7 @@ a:hover {
   z-index: 3;
   opacity: 0;
   transform: scale(1);
-  animation: scale 7s linear forwards;
+  animation: scale 5s linear forwards;
   transition: opacity 2s ease;
 }
 
@@ -203,7 +203,7 @@ a:hover {
   right: 0;
   width: 110%;
   min-height: 100%;
-  animation: slide 3s forwards, move-left 7s linear forwards;
+  animation: slide 3s forwards, move-left 5s linear forwards;
 }
 
 @keyframes slide {
