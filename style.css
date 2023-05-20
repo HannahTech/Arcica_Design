@@ -47,13 +47,14 @@ body::before {
   left: 30px;
   color: #fff;
   font-family: "Isocpeur", sans-serif;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 1s;
 }
 
-#logoText {
+.logo span {
   font-size: 34px;
   letter-spacing: 14px;
+  color: white;
   font-weight: 800;
 }
 

@@ -9,7 +9,7 @@ const imagesNumber = 4;
 
 const changeImage = (direction) => {
   currentImage = (currentImage + direction + imagesNumber) % imagesNumber;
-  img.src = `images/2${currentImage}.jpg`;
+  img.src = `images/0${currentImage}.jpg`;
 };
 
 leftButton.addEventListener("click", () => {

@@ -234,19 +234,19 @@ showSlides();
 //   }, 100);
 // });
 
-const logo = document.querySelector(".logo");
+// const logo = document.querySelector(".logo");
 const menu = document.querySelector(".menu");
 const social = document.querySelector(".social-icons");
 let timeout;
 
 function showElements() {
-  logo.classList.add("show");
+  // logo.classList.add("show");
   menu.classList.add("show");
   social.classList.add("show");
 }
 
 function hideElements() {
-  logo.classList.remove("show");
+  // logo.classList.remove("show");
   menu.classList.remove("show");
   social.classList.remove("show");
 }

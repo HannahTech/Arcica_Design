@@ -1,3 +1,21 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400i,600,700,800&display=swap");
+@import url(//db.onlinewebfonts.com/c/4b5ae315f5df148f0ab479a7cedc9832?family=ISOCPEUR);
+
+@font-face {
+  font-family: "ISOCPEUR";
+  src: url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.eot");
+  src: url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.svg#ISOCPEUR")
+      format("svg");
+}
+
 html {
   height: 100%;
 }
@@ -6,9 +24,30 @@ body {
   height: 100%;
   margin: 0px;
   background-color: rgb(255, 255, 255);
-  font-family: "Open Sans", Helvetica, Arial;
+  font-family: "Isocpeur", Helvetica, Arial;
   -webkit-font-smoothing: antialiased;
   user-select: none;
+}
+
+.logo {
+  z-index: 10;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  color: black;
+}
+
+.logo span {
+  font-size: 34px;
+  letter-spacing: 14px;
+  font-weight: 800;
+}
+
+#subText {
+  font-size: 18px;
+  font-weight: 580;
+  font-size: 16px;
+  letter-spacing: 3.75px;
 }
 
 /* menu style */
@@ -20,24 +59,16 @@ body {
   transition: background-color 0.7s;
 }
 
-.menu .logo {
-  float: left;
-  font-size: 25px;
-  padding-left: 50px;
-  letter-spacing: 7px;
-  text-shadow: 3px 3px 3px rgb(30, 30, 30, 0.5);
-}
-
 .menu a {
   float: right;
   color: rgb(30, 30, 30);
   text-align: center;
-  padding-top: 20px;
+  padding-top: 30px;
   padding-left: 15px;
   padding-bottom: 10px;
   padding-right: 50px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .menu .icon {
@@ -54,7 +85,7 @@ h3 {
   padding-left: 10%;
 }
 h1 {
-  padding-top: 2%;
+  padding-top: 8%;
 }
 
 .text {
@@ -95,7 +126,7 @@ h1 {
 .button:hover {
   background-color: transparent;
   color: rgb(86, 86, 86);
-  box-shadow: inset 0px 0px 0px 2px  rgb(201, 201, 201);
+  box-shadow: inset 0px 0px 0px 2px rgb(201, 201, 201);
 }
 
 .map {
@@ -123,14 +154,15 @@ h1 {
 }
 
 .about {
-  float: left; 
-  font-size: 15px;
+  float: left;
+  font-size: 18px;
   margin: 6%;
   width: 40%;
   line-height: 30px;
 }
 
 .fa {
+  margin-top: 23px;
   font-size: 30px;
   padding: 15px;
   width: 50px;
@@ -140,7 +172,6 @@ h1 {
 
 .fa-text {
   font-size: 20px;
-  font-family: "Open Sans", Helvetica, Arial;
   color: rgb(30, 30, 30, 0.7);
 }
 

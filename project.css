@@ -1,4 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400i,600,700,800&display=swap");
+@import url(//db.onlinewebfonts.com/c/4b5ae315f5df148f0ab479a7cedc9832?family=ISOCPEUR);
+
+@font-face {
+  font-family: "ISOCPEUR";
+  src: url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.eot");
+  src: url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.svg#ISOCPEUR")
+      format("svg");
+}
 
 html {
   height: 100%;
@@ -8,7 +24,7 @@ body {
   height: 100%;
   margin: 0px;
   background-color: rgb(255, 255, 255);
-  font-family: "Open Sans", Helvetica, Arial;
+  font-family: "Isocpeur", sans-serif;
   -webkit-font-smoothing: antialiased;
   user-select: none;
 }
@@ -20,26 +36,40 @@ body {
   overflow: hidden;
   background-color: transparent;
   transition: background-color 0.7s;
+  margin-bottom: 60px;
 }
 
-.menu .logo {
-  float: left;
-  font-size: 25px;
-  padding-left: 50px;
-  letter-spacing: 7px;
-  text-shadow: 3px 3px 3px rgb(30, 30, 30, 0.5);
+.logo {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  opacity: 1;
+}
+
+#logoText {
+  font-size: 34px;
+  letter-spacing: 14px;
+  font-weight: 800;
+}
+
+#subText {
+  font-size: 18px;
+  margin-top: 7px;
+  font-weight: 580;
+  font-size: 16px;
+  letter-spacing: 3.75px;
 }
 
 .menu a {
   float: right;
   color: rgb(30, 30, 30);
   text-align: center;
-  padding-top: 20px;
+  padding-top: 40px;
   padding-left: 15px;
   padding-bottom: 10px;
   padding-right: 50px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .menu .icon {
@@ -119,8 +149,7 @@ body {
   padding-left: 20%;
   padding-right: 20%;
   color: rgb(78, 78, 78);
-  font-size: 14px;
-  font-family: "Open Sans", Helvetica, Arial;
+  font-size: 18px;
   line-height: 30px;
   margin-top: 70px;
 }
@@ -177,7 +206,6 @@ hr {
 .fa-text {
   font-size: 16px;
   padding-left: 50px;
-  font-family: "Open Sans", Helvetica, Arial;
   color: #fff;
   top: 50%;
   transform: translateY(-50%);
