@@ -44,7 +44,7 @@ body::before {
   z-index: 10;
   position: absolute;
   top: 30px;
-  left: 30px;
+  left: 35px;
   color: #fff;
   font-family: "Isocpeur", sans-serif;
   opacity: 1;
@@ -174,7 +174,7 @@ a:hover {
   z-index: 1;
   position: fixed;
   top: auto;
-  bottom: 0;
+  bottom: auto;
   left: 0;
   width: 100%;
   height: auto;

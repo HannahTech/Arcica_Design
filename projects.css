@@ -31,25 +31,57 @@ body {
 
 .logo {
   z-index: 10;
-  position: absolute;
-  top: 10px;
-  left: 30px;
+  position: fixed;
+  top: 30px;
+  left: 35px;
   color: #fff;
+}
+
+.logo:hover {
+  color: black;
 }
 
 .logo span {
   font-size: 34px;
   letter-spacing: 14px;
-  color: white;
+  /* color: white; */
   font-weight: 800;
 }
 
 #subText {
   font-size: 18px;
-  margin-top: 50px;
   font-weight: 580;
   font-size: 16px;
   letter-spacing: 3.75px;
+}
+
+.menu {
+  z-index: 10;
+  position: fixed;
+  height: 6%;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+  color: #fff;
+  opacity: 1;
+  transition: opacity 1s;
+}
+.menu:hover {
+  background-color: rgba(53, 53, 53, 0.75);
+  padding-top: 20px;
+}
+
+.menu-item {
+  margin: 0 25px;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 7px;
+  color: white;
+}
+
+.menu-item:hover {
+  color: black;
 }
 
 /* .company_name {
@@ -64,7 +96,7 @@ body {
 } */
 
 /* projects style */
-#projects {
+/* #projects {
   height: 150%;
   width: 100%;
 }
@@ -104,4 +136,47 @@ span {
   font-size: 18px;
   font-weight: 300;
   margin-top: 12%;
+} */
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.project-image-container {
+  width: 50%;
+  position: relative;
+}
+
+.project-image {
+  width: 100%;
+  display: block;
+  padding: 5px;
+  box-sizing: border-box;
+  transition: opacity 0.3s;
+  outline: 1.5px solid rgb(255, 255, 255, 0.5);
+  outline-offset: -60px;
+}
+
+.project-image-container:hover .project-image {
+  opacity: 0.3;
+  outline: 1.5px solid rgba(0, 0, 0);
+}
+
+.project-details {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s;
+  color: black;
+  font-size: 22px;
+}
+
+.project-image-container:hover .project-details {
+  opacity: 1;
 }

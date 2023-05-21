@@ -1,4 +1,5 @@
 node_modules
 old
 .DS_Store
-videos
+videos/original
+videos/1080

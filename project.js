@@ -3,13 +3,21 @@ const img = document.getElementById("img");
 const leftButton = document.getElementById("left");
 const rightButton = document.getElementById("right");
 
-let currentImage = 1;
+let currentImage = 0;
 
-const imagesNumber = 4;
+const imagesNumber = 5;
 
+const images = [
+  "043-ArcicaVynerRd1",
+  "084-ArcicaVynerRd",
+  "143-ArcicaVynerRd",
+  "192-ArcicaVynerRd",
+  "313-ArcicaVynerRd",
+];
 const changeImage = (direction) => {
   currentImage = (currentImage + direction + imagesNumber) % imagesNumber;
-  img.src = `images/0${currentImage}.jpg`;
+  const imageName = images[currentImage];
+  img.src = `images/${imageName}.jpg`;
 };
 
 leftButton.addEventListener("click", () => {

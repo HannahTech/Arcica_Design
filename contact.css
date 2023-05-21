@@ -21,9 +21,11 @@ html {
 }
 
 body {
-  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0px;
-  background-color: rgb(255, 255, 255);
   font-family: "Isocpeur", Helvetica, Arial;
   -webkit-font-smoothing: antialiased;
   user-select: none;
@@ -31,9 +33,9 @@ body {
 
 .logo {
   z-index: 10;
-  position: absolute;
+  position: fixed;
   top: 30px;
-  left: 30px;
+  left: 35px;
   color: black;
 }
 
@@ -51,7 +53,7 @@ body {
 }
 
 /* menu style */
-.menu {
+/* .menu {
   z-index: 1;
   position: relative;
   overflow: hidden;
@@ -78,14 +80,47 @@ body {
 
 .menu a:hover:not(:first-child):not(.icon) {
   color: rgb(188, 3, 3);
+} */
+
+.menu {
+  z-index: 10;
+  position: fixed;
+  height: 6%;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+  color: black;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.menu-item {
+  z-index: 20;
+  margin: 0 25px;
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 7px;
+}
+
+.menu-item:hover {
+  color: rgb(188, 3, 3);
+}
+
+#main-text {
+  height: 80%;
+  width: 100%;
+  margin-top: 8%;
+}
+
+.content {
+  width: 100%;
 }
 
 h1,
 h3 {
   padding-left: 10%;
-}
-h1 {
-  padding-top: 8%;
 }
 
 .text {
