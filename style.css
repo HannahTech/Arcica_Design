@@ -1,7 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400i,600,700,800&display=swap");
-@import url(//db.onlinewebfonts.com/c/4b5ae315f5df148f0ab479a7cedc9832?family=ISOCPEUR);
+/* @import url(//db.onlinewebfonts.com/c/4b5ae315f5df148f0ab479a7cedc9832?family=ISOCPEUR); */
 
-@font-face {
+/* @font-face {
   font-family: "ISOCPEUR";
   src: url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.eot");
   src: url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.eot?#iefix")
@@ -14,12 +13,18 @@
       format("truetype"),
     url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.svg#ISOCPEUR")
       format("svg");
+} */
+
+@font-face {
+  font-family: "ISOCPEUR";
+  src: url("ISOCPEUR.ttf") format("truetype");
 }
 
+html,
 body {
   height: 100%;
   background-color: rgb(30, 30, 30);
-  font-family: "Isocpeur", Tahoma, Verdana, sans-serif;
+  font-family: "ISOCPEUR", Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   user-select: none;
   margin: 0;
