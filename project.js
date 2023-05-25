@@ -8,11 +8,11 @@ let currentImage = 0;
 const imagesNumber = 5;
 
 const images = [
-  "043-ArcicaVynerRd1",
-  "084-ArcicaVynerRd",
-  "143-ArcicaVynerRd",
-  "192-ArcicaVynerRd",
-  "313-ArcicaVynerRd",
+  "043-Arcica Vyner Rd 1",
+  "084-Arcica Vyner Rd",
+  "143-Arcica Vyner Rd",
+  "192-Arcica Vyner Rd",
+  "313-Arcica Vyner Rd",
 ];
 const changeImage = (direction) => {
   currentImage = (currentImage + direction + imagesNumber) % imagesNumber;
