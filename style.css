@@ -29,6 +29,7 @@ body {
   user-select: none;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 /* logo */
@@ -120,6 +121,10 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  overflow: hidden;
+}
+
+.slideshow-container {
   overflow: hidden;
 }
 
