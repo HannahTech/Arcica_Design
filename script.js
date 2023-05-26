@@ -139,7 +139,7 @@ function showSlides() {
     overlay.src = `images/${images[slideIndex - 1]}`;
     overlay.style.opacity = "0";
     currentSlide.appendChild(overlay);
-    fadeIn(overlay, 2000);
+    fadeIn(overlay, 1500);
     // setTimeout(function () {
     //   fadeOut(currentSlide, 200, function () {
     //     showSlides();
@@ -152,7 +152,7 @@ function showSlides() {
     move_left.src = `images/${images[slideIndex - 1]}`;
     move_left.style.opacity = "0";
     currentSlide.appendChild(move_left);
-    fadeIn(move_left, 2000);
+    fadeIn(move_left, 1500);
     setTimeout(showSlides, 5000);
   } else if (slideIndex % 3 == 0) {
     const currentVideo = currentSlide.querySelectorAll("video")[0];
@@ -160,7 +160,7 @@ function showSlides() {
     currentVideo.play();
     fadeIn(currentVideo, 500);
     setTimeout(function () {
-      fadeOut(currentVideo, 2000, function () {
+      fadeOut(currentVideo, 1500, function () {
         currentVideo.pause();
         currentVideo.style.display = "none";
         showSlides();
