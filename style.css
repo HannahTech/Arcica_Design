@@ -45,22 +45,21 @@ body {
 }
 
 .logo span {
-  font-size: 34px;
+  font-size: 38px;
   letter-spacing: 14px;
   color: white;
   font-weight: 800;
 }
 
 #subText {
-  font-size: 18px;
+  font-size: 20px;
   margin-top: 7px;
   font-weight: 580;
-  font-size: 16px;
   letter-spacing: 3.75px;
 }
 
-.logo.show {
-  opacity: 1;
+.logo.hide {
+  opacity: 0;
 }
 
 /* menu */
@@ -70,19 +69,21 @@ body {
   height: 6%;
   width: 100%;
   text-align: center;
+  justify-content: center;
   bottom: 0;
   color: #fff;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 1s;
 }
 
-.menu.show {
-  opacity: 1;
+.menu.hide {
+  opacity: 0;
 }
 
 .menu-item {
   z-index: 20;
   margin: 0 25px;
+  text-align: center;
   color: #fff;
   font-size: 20px;
   font-weight: 500;
@@ -93,25 +94,72 @@ body {
 /* social-icons */
 .social-icon {
   z-index: 20;
-  margin-bottom: 8px;
+  margin: 6px;
   color: #fff;
   font-size: 18px;
 }
 
-.social-icons.show {
-  opacity: 1;
+.social-icons.hide {
+  opacity: 0;
 }
 
+/* 01 bc*/
+/*
+ .social-icons {
+  z-index: 20;
+  position: fixed;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-55%);
+  display: flex;
+  align-items: center;
+  color: #fff;
+  opacity: 1;
+  transition: opacity 1s;
+} */
+
+/* 02 br */
+/* .social-icons {
+  z-index: 20;
+  position: fixed;
+  height: 6%;
+  width: 5%;
+  bottom: 1%;
+  right: 0;
+  transform: translateX(-55%);
+  display: flex;
+  color: #fff;
+  opacity: 1;
+  transition: opacity 1s;
+} */
+
+/* 03 tc*/
+/* .social-icons {
+  z-index: 20;
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-55%);
+  display: flex;
+  align-items: center;
+  color: #fff;
+  opacity: 1;
+  transition: opacity 1s;
+} */
+
+/* 04 cr */
 .social-icons {
   z-index: 20;
   position: fixed;
-  bottom: 15px;
-  right: 25px;
+  height: 100%;
+  width: 3.5%;
+  bottom: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  justify-content: center;
   color: #fff;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 1s;
 }
 
