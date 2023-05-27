@@ -233,6 +233,8 @@ let timeout;
 let currentLine = null;
 let currentContent = null;
 let lineTimeout;
+let hideTabsTime = 10000;
+let hideTextTime = 20000;
 
 function showElements() {
   menu.classList.remove("hide");
@@ -251,13 +253,13 @@ function hideElementsAfterDelay(delay) {
 }
 
 window.addEventListener("load", function () {
-  hideElementsAfterDelay(3500);
+  hideElementsAfterDelay(hideTabsTime);
 });
 
 document.addEventListener("mousemove", function () {
   clearTimeout(timeout);
   showElements();
-  hideElementsAfterDelay(3500);
+  hideElementsAfterDelay(hideTabsTime);
 });
 
 // document.addEventListener("mouseout", function () {
@@ -275,7 +277,7 @@ document.addEventListener("DOMContentLoaded", function () {
       removeCurrentLineAndContent();
       showLine(event, this.getAttribute("href").substring(1));
       clearTimeout(timeout);
-      hideElementsAfterDelay(9000);
+      hideElementsAfterDelay(hideTextTime);
     });
   });
 });
@@ -320,5 +322,5 @@ function showLine(event, contentId) {
     content.style.opacity = "0";
     currentLine = null;
     currentContent = null;
-  }, 9000);
+  }, hideTextTime);
 }
