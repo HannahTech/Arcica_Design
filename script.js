@@ -275,7 +275,7 @@ document.addEventListener("DOMContentLoaded", function () {
       removeCurrentLineAndContent();
       showLine(event, this.getAttribute("href").substring(1));
       clearTimeout(timeout);
-      hideElementsAfterDelay(7000);
+      hideElementsAfterDelay(9000);
     });
   });
 });
@@ -320,5 +320,5 @@ function showLine(event, contentId) {
     content.style.opacity = "0";
     currentLine = null;
     currentContent = null;
-  }, 7000);
+  }, 9000);
 }
