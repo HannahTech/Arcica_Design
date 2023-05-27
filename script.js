@@ -230,31 +230,34 @@ showSlides();
 const menu = document.querySelector(".menu");
 const social = document.querySelector(".social-icons");
 let timeout;
+let currentLine = null;
+let currentContent = null;
+let lineTimeout;
 
 function showElements() {
-  // logo.classList.remove("show");
   menu.classList.remove("hide");
   social.classList.remove("hide");
 }
 
 function hideElements() {
-  // logo.classList.add("show");
   menu.classList.add("hide");
   social.classList.add("hide");
 }
 
-function hideElementsAfterDelay() {
+function hideElementsAfterDelay(delay) {
   timeout = setTimeout(function () {
     hideElements();
-  }, 3500);
+  }, delay);
 }
 
-window.addEventListener("load", hideElementsAfterDelay);
+window.addEventListener("load", function () {
+  hideElementsAfterDelay(3500);
+});
 
 document.addEventListener("mousemove", function () {
   clearTimeout(timeout);
   showElements();
-  hideElementsAfterDelay();
+  hideElementsAfterDelay(3500);
 });
 
 // document.addEventListener("mouseout", function () {
@@ -263,3 +266,59 @@ document.addEventListener("mousemove", function () {
 //     hideElements();
 //   }, 3000);
 // });
+
+// Menu Content
+document.addEventListener("DOMContentLoaded", function () {
+  const menuLinks = document.querySelectorAll(".menu-item");
+  menuLinks.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      removeCurrentLineAndContent();
+      showLine(event, this.getAttribute("href").substring(1));
+      clearTimeout(timeout);
+      hideElementsAfterDelay(7000);
+    });
+  });
+});
+
+function removeCurrentLineAndContent() {
+  if (currentLine) {
+    currentLine.parentNode.removeChild(currentLine);
+    clearTimeout(lineTimeout);
+    currentLine = null;
+  }
+  if (currentContent) {
+    currentContent.style.opacity = "0";
+    currentContent = null;
+  }
+}
+
+function showLine(event, contentId) {
+  event.preventDefault();
+
+  const content = document.getElementById(contentId);
+  const link = event.target;
+  content.style.opacity = "1";
+
+  removeCurrentLineAndContent();
+  clearTimeout(timeout);
+
+  let line = document.createElement("div");
+  line.className = "line";
+  const linkPosition = link.getBoundingClientRect();
+  const contentPosition = content.getBoundingClientRect();
+
+  line.style.top = contentPosition.bottom + 20 + "px";
+  line.style.left = linkPosition.left + 0.475 * linkPosition.width + "px";
+  line.style.height = contentPosition.top - linkPosition.top + "px";
+
+  document.body.appendChild(line);
+  currentLine = line;
+  currentContent = content;
+
+  lineTimeout = setTimeout(function () {
+    line.style.opacity = "0";
+    content.style.opacity = "0";
+    currentLine = null;
+    currentContent = null;
+  }, 7000);
+}

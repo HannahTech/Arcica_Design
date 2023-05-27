@@ -82,6 +82,7 @@ body {
 
 .menu-item {
   z-index: 20;
+  position: relative;
   margin: 0 25px;
   text-align: center;
   color: #fff;
@@ -89,6 +90,38 @@ body {
   font-weight: 500;
   text-decoration: none;
   letter-spacing: 7px;
+}
+
+/* content parts */
+.content-text {
+  z-index: 25;
+  position: fixed;
+  top: 80%;
+  width: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  padding: 20px;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.line {
+  z-index: 50;
+  width: 2px;
+  background-color: #fff;
+  position: absolute;
+  bottom: 5%;
+  transform: translateY(-50%);
+  opacity: 1;
+  transition: height 0.3s ease, opacity 0.5s;
+}
+
+.content-container {
+  position: relative;
 }
 
 /* social-icons */
