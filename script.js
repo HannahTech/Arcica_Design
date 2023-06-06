@@ -262,6 +262,13 @@ document.addEventListener("mousemove", function () {
   hideElementsAfterDelay(hideTabsTime);
 });
 
+document.addEventListener("click", function (event) {
+  const isMenuClick = event.target.classList.contains("menu-item");
+  if (!isMenuClick && !event.target.classList.contains("content-text")) {
+    removeCurrentLineAndContent();
+  }
+});
+
 // document.addEventListener("mouseout", function () {
 //   clearTimeout(timeout);
 //   timeout = setTimeout(function () {
@@ -274,8 +281,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuLinks = document.querySelectorAll(".menu-item");
   menuLinks.forEach(function (link) {
     link.addEventListener("click", function (event) {
+      event.preventDefault();
+      const contentId = this.getAttribute("href").substring(1);
+
       removeCurrentLineAndContent();
-      showLine(event, this.getAttribute("href").substring(1));
+      showLine(event, contentId);
+
       clearTimeout(timeout);
       hideElementsAfterDelay(hideTextTime);
     });
@@ -295,20 +306,20 @@ function removeCurrentLineAndContent() {
 }
 
 function showLine(event, contentId) {
-  event.preventDefault();
+  // event.preventDefault();
 
   const content = document.getElementById(contentId);
   const link = event.target;
   content.style.opacity = "1";
 
-  removeCurrentLineAndContent();
-  clearTimeout(timeout);
+  // removeCurrentLineAndContent();
+  // clearTimeout(timeout);
 
   let line = document.createElement("div");
   line.className = "line";
   const linkPosition = link.getBoundingClientRect();
   const contentPosition = content.getBoundingClientRect();
-  console.log(contentPosition.bottom);
+  // console.log(contentPosition.bottom);
   line.style.top = contentPosition.bottom + 5 + "px";
   line.style.left = linkPosition.left + 0.475 * linkPosition.width + "px";
   // line.style.height = contentPosition.top - linkPosition.top + "px";
