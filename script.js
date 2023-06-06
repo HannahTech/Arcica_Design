@@ -233,8 +233,8 @@ let timeout;
 let currentLine = null;
 let currentContent = null;
 let lineTimeout;
-let hideTabsTime = 10000;
-let hideTextTime = 20000;
+let hideTabsTime = 20000;
+let hideTextTime = 30000;
 
 function showElements() {
   menu.classList.remove("hide");
