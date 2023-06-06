@@ -81,47 +81,45 @@ body {
 }
 
 .menu-item {
-  z-index: 20;
   position: relative;
   margin: 0 25px;
   text-align: center;
   color: #fff;
   font-size: 20px;
-  font-weight: 500;
   text-decoration: none;
-  letter-spacing: 7px;
+  font-weight: 580;
+  letter-spacing: 3.75px;
 }
 
 /* content parts */
+.content-container {
+  position: relative;
+}
+
 .content-text {
   z-index: 25;
   position: fixed;
-  top: 80%;
-  width: 25%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 30%;
+  width: 35%;
+  height: auto;
   color: #fff;
-  padding: 20px;
   font-size: 20px;
+  font-weight: 580;
+  letter-spacing: 3.75px;
   line-height: 30px;
-  text-align: left;
+  text-align: justify;
   opacity: 0;
   transition: opacity 0.5s;
 }
 
 .line {
   z-index: 50;
-  width: 2px;
+  width: 0.5px;
   background-color: #fff;
   position: absolute;
-  bottom: 5%;
-  transform: translateY(-50%);
+  bottom: 7%;
   opacity: 1;
   transition: height 0.3s ease, opacity 0.5s;
-}
-
-.content-container {
-  position: relative;
 }
 
 /* social-icons */

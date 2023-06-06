@@ -99,7 +99,7 @@ for (let i = 0; i < Math.max(images.length, videos.length); i++) {
     const video = document.createElement("video");
     video.src = `videos/1080/${videos[j]}`;
 
-    console.log(videos[j]);
+    // console.log(videos[j]);
     // video.playbackRate = 0.9;
     video.autoplay = true;
     video.loop = true;
@@ -308,14 +308,16 @@ function showLine(event, contentId) {
   line.className = "line";
   const linkPosition = link.getBoundingClientRect();
   const contentPosition = content.getBoundingClientRect();
-
-  line.style.top = contentPosition.bottom + 20 + "px";
+  console.log(contentPosition.bottom);
+  line.style.top = contentPosition.bottom + 5 + "px";
   line.style.left = linkPosition.left + 0.475 * linkPosition.width + "px";
-  line.style.height = contentPosition.top - linkPosition.top + "px";
+  // line.style.height = contentPosition.top - linkPosition.top + "px";
 
   document.body.appendChild(line);
   currentLine = line;
   currentContent = content;
+
+  content.style.left = linkPosition.left + "px";
 
   lineTimeout = setTimeout(function () {
     line.style.opacity = "0";
