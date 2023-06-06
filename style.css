@@ -99,7 +99,7 @@ body {
 .content-text {
   z-index: 25;
   position: fixed;
-  bottom: 30%;
+  bottom: 25%;
   width: 35%;
   height: auto;
   color: #fff;
