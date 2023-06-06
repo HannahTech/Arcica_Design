@@ -306,14 +306,9 @@ function removeCurrentLineAndContent() {
 }
 
 function showLine(event, contentId) {
-  // event.preventDefault();
-
   const content = document.getElementById(contentId);
   const link = event.target;
   content.style.opacity = "1";
-
-  // removeCurrentLineAndContent();
-  // clearTimeout(timeout);
 
   let line = document.createElement("div");
   line.className = "line";
@@ -322,7 +317,6 @@ function showLine(event, contentId) {
   // console.log(contentPosition.bottom);
   line.style.top = contentPosition.bottom + 5 + "px";
   line.style.left = linkPosition.left + 0.475 * linkPosition.width + "px";
-  // line.style.height = contentPosition.top - linkPosition.top + "px";
 
   document.body.appendChild(line);
   currentLine = line;
