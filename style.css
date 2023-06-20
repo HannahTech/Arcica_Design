@@ -112,6 +112,24 @@ body {
   transition: opacity 2s;
 }
 
+.content-text a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#service,
+#about {
+  z-index: 10;
+}
+
+#contact {
+  z-index: 15;
+}
+
+.content-text a:hover {
+  cursor: pointer;
+}
+
 .line {
   z-index: 50;
   width: 0.5px;

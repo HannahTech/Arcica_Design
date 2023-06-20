@@ -293,6 +293,17 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+const contactLinks = document.querySelectorAll("#contact a");
+contactLinks.forEach(function (link) {
+  link.addEventListener("click", handleContactLinks);
+});
+
+function handleContactLinks(event) {
+  event.preventDefault();
+  const url = this.href;
+  window.open(url, "_blank");
+}
+
 function removeCurrentLineAndContent() {
   if (currentLine) {
     currentLine.parentNode.removeChild(currentLine);
