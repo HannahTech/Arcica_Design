@@ -368,3 +368,9 @@ body {
     font-size: 22px;
   }
 }
+
+@media (max-height: 590px) {
+  .content-text {
+    bottom: 15%;
+  }
+}
