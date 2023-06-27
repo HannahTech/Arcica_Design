@@ -235,6 +235,7 @@ let currentContent = null;
 let lineTimeout;
 let hideTabsTime = 20000;
 let hideTextTime = 30000;
+let screenMobile = 768;
 
 function showElements() {
   menu.classList.remove("hide");
@@ -242,8 +243,10 @@ function showElements() {
 }
 
 function hideElements() {
-  menu.classList.add("hide");
-  social.classList.add("hide");
+  if (window.innerWidth > screenMobile) {
+    menu.classList.add("hide");
+    social.classList.add("hide");
+  }
 }
 
 function hideElementsAfterDelay(delay) {
@@ -264,7 +267,9 @@ document.addEventListener("mousemove", function () {
 
 document.addEventListener("click", function (event) {
   const isMenuClick = event.target.classList.contains("menu-item");
-  if (!isMenuClick && !event.target.classList.contains("content-text")) {
+  const isContentTextClick = event.target.classList.contains("content-text");
+
+  if (!isMenuClick && !isContentTextClick) {
     removeCurrentLineAndContent();
   }
 });
@@ -334,6 +339,14 @@ function showLine(event, contentId) {
   currentContent = content;
 
   content.style.left = linkPosition.left + "px";
+
+  line.style.opacity = "0";
+  content.style.opacity = "0";
+
+  setTimeout(function () {
+    line.style.opacity = "1";
+    content.style.opacity = "1";
+  }, 50);
 
   lineTimeout = setTimeout(function () {
     line.style.opacity = "0";
