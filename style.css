@@ -1,20 +1,3 @@
-/* @import url(//db.onlinewebfonts.com/c/4b5ae315f5df148f0ab479a7cedc9832?family=ISOCPEUR); */
-
-/* @font-face {
-  font-family: "ISOCPEUR";
-  src: url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.eot");
-  src: url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.eot?#iefix")
-      format("embedded-opentype"),
-    url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.woff2")
-      format("woff2"),
-    url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.woff")
-      format("woff"),
-    url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.ttf")
-      format("truetype"),
-    url("//db.onlinewebfonts.com/t/4b5ae315f5df148f0ab479a7cedc9832.svg#ISOCPEUR")
-      format("svg");
-} */
-
 @font-face {
   font-family: "ISOCPEUR";
   src: url("ISOCPEUR.ttf") format("truetype");
@@ -113,6 +96,9 @@ body {
   transition: opacity 2s;
 }
 
+.content-text.hidden {
+  display: none;
+}
 .content-text a {
   text-decoration: none;
   color: #fff;
@@ -156,51 +142,6 @@ body {
   opacity: 0;
 }
 
-/* 01 bc*/
-/*
- .social-icons {
-  z-index: 20;
-  position: fixed;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-55%);
-  display: flex;
-  align-items: center;
-  color: #fff;
-  opacity: 1;
-  transition: opacity 1s;
-} */
-
-/* 02 br */
-/* .social-icons {
-  z-index: 20;
-  position: fixed;
-  height: 6%;
-  width: 5%;
-  bottom: 1%;
-  right: 0;
-  transform: translateX(-55%);
-  display: flex;
-  color: #fff;
-  opacity: 1;
-  transition: opacity 1s;
-} */
-
-/* 03 tc*/
-/* .social-icons {
-  z-index: 20;
-  position: fixed;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-55%);
-  display: flex;
-  align-items: center;
-  color: #fff;
-  opacity: 1;
-  transition: opacity 1s;
-} */
-
-/* 04 cr */
 .social-icons {
   z-index: 20;
   position: fixed;
@@ -374,9 +315,6 @@ body {
   #hidden-text {
     display: none;
   }
-  /* .content-container {
-    position: absolute;
-  } */
 
   .content-container {
     position: relative;

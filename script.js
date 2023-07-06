@@ -317,6 +317,7 @@ function removeCurrentLineAndContent() {
   }
   if (currentContent) {
     currentContent.style.opacity = "0";
+    currentContent.classList.add("hidden");
     currentContent = null;
   }
 }
@@ -325,6 +326,7 @@ function showLine(event, contentId) {
   const content = document.getElementById(contentId);
   const link = event.target;
   content.style.opacity = "1";
+  content.classList.remove("hidden");
 
   let line = document.createElement("div");
   line.className = "line";
@@ -355,6 +357,7 @@ function showLine(event, contentId) {
   lineTimeout = setTimeout(function () {
     line.style.opacity = "0";
     content.style.opacity = "0";
+    content.classList.add("hidden");
     currentLine = null;
     currentContent = null;
   }, hideTextTime);
