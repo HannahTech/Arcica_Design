@@ -333,12 +333,16 @@ function showLine(event, contentId) {
   // console.log(contentPosition.bottom);
   line.style.top = contentPosition.bottom + 5 + "px";
   line.style.left = linkPosition.left + 0.475 * linkPosition.width + "px";
-
+  line.style.width = "2px";
   document.body.appendChild(line);
   currentLine = line;
   currentContent = content;
 
-  content.style.left = linkPosition.left + "px";
+  const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+
+  if (!isPortrait) {
+    content.style.left = linkPosition.left + "px";
+  }
 
   line.style.opacity = "0";
   content.style.opacity = "0";
