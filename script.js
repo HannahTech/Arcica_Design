@@ -97,7 +97,7 @@ for (let i = 0; i < Math.max(images.length, videos.length); i++) {
     slide.appendChild(img);
   } else if (i % 3 == 2) {
     const video = document.createElement("video");
-    video.src = `videos/${videos[j]}`;
+    video.src = `videos/1080/${videos[j]}`;
 
     // console.log(videos[j]);
     // video.playbackRate = 0.9;
