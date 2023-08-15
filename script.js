@@ -104,6 +104,7 @@ for (let i = 0; i < Math.max(images.length, videos.length); i++) {
     video.autoplay = true;
     video.loop = true;
     video.muted = true;
+    video.playsinline = true;
     slide.appendChild(video);
     j++;
   }
