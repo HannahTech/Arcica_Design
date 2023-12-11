@@ -85,15 +85,18 @@ body {
   position: fixed;
   bottom: 25%;
   width: 35%;
-  height: auto;
+  padding: 30px;
+  /* height: auto; */
   color: #fff;
   font-size: 20px;
   font-weight: 580;
   letter-spacing: 3.75px;
   line-height: 30px;
-  text-align: justify;
+  /* text-align: justify; */
+  text-align: left;
   opacity: 0;
   transition: opacity 2s;
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .content-text.hidden {
@@ -107,6 +110,9 @@ body {
 #service,
 #about {
   z-index: 10;
+  overflow-y: auto;
+  max-height: 50vh;
+  padding: 20px;
 }
 
 #contact {
@@ -116,8 +122,18 @@ body {
 .content-text a:hover {
   cursor: pointer;
 }
-#hidden-text {
-  display: block;
+
+.swords {
+  position: relative;
+}
+
+.swords::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  border-bottom: 1px solid #ffffff;
 }
 
 .line {
@@ -254,17 +270,18 @@ body {
     text-align: center;
     color: rgb(84, 84, 84);
     z-index: 10;
+    white-space: nowrap;
   }
 
   .logo span {
     color: rgb(84, 84, 84);
-    font-size: 65px;
+    font-size: 55px;
     font-weight: 400;
   }
 
   #subText {
     color: rgb(84, 84, 84);
-    font-size: 22px;
+    font-size: 20px;
   }
   .menu {
     position: absolute;
@@ -272,12 +289,12 @@ body {
     width: 100%;
     text-align: center;
     justify-content: center;
-    bottom: 10%;
+    bottom: 12%;
     color: rgb(84, 84, 84);
   }
 
   .menu-item {
-    font-size: 1.5em;
+    font-size: 20px;
     margin: 0 10px;
     color: rgb(84, 84, 84);
   }
@@ -332,8 +349,19 @@ body {
     position: absolute;
     width: 8%;
   }
+
+  .social-icons {
+    position: absolute;
+    height: 5%;
+    width: 100%;
+    flex-direction: row;
+  }
+
   .social-icon {
-    font-size: 22px;
+    z-index: 20;
+    margin: 10px;
+    color: rgb(84, 84, 84);
+    font-size: 20px;
   }
 }
 

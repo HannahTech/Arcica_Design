@@ -293,6 +293,13 @@ document.addEventListener("DOMContentLoaded", function () {
       removeCurrentLineAndContent();
       showLine(event, contentId);
 
+      const targetSection = document.getElementById(contentId);
+
+      if (targetSection.scrollTop === 0) {
+        targetSection.scrollIntoView({ behavior: "smooth" });
+      } else {
+        targetSection.scrollTop = 0;
+      }
       clearTimeout(timeout);
       hideElementsAfterDelay(hideTextTime);
     });
@@ -324,22 +331,23 @@ function removeCurrentLineAndContent() {
 }
 
 function showLine(event, contentId) {
-  const content = document.getElementById(contentId);
   const link = event.target;
-  content.style.opacity = "1";
+  const linkPosition = link.getBoundingClientRect();
+
+  const content = document.getElementById(contentId);
+  content.style.opacity = "0";
   content.classList.remove("hidden");
+  const contentPosition = content.getBoundingClientRect();
+  currentContent = content;
 
   let line = document.createElement("div");
   line.className = "line";
-  const linkPosition = link.getBoundingClientRect();
-  const contentPosition = content.getBoundingClientRect();
-  // console.log(contentPosition.bottom);
   line.style.top = contentPosition.bottom + 5 + "px";
   line.style.left = linkPosition.left + 0.475 * linkPosition.width + "px";
   line.style.width = "2px";
   document.body.appendChild(line);
   currentLine = line;
-  currentContent = content;
+  line.style.opacity = "0";
 
   const isPortrait = window.matchMedia("(orientation: portrait)").matches;
 
@@ -347,13 +355,13 @@ function showLine(event, contentId) {
     content.style.left = linkPosition.left + "px";
   }
 
-  line.style.opacity = "0";
-  content.style.opacity = "0";
-
   setTimeout(function () {
     line.style.opacity = "1";
-    content.style.opacity = "1";
   }, 50);
+
+  setTimeout(function () {
+    content.style.opacity = "1";
+  }, 100);
 
   lineTimeout = setTimeout(function () {
     line.style.opacity = "0";
