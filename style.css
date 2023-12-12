@@ -86,13 +86,11 @@ body {
   bottom: 25%;
   width: 35%;
   padding: 30px;
-  /* height: auto; */
   color: #fff;
   font-size: 20px;
   font-weight: 580;
   letter-spacing: 3.75px;
   line-height: 30px;
-  /* text-align: justify; */
   text-align: left;
   opacity: 0;
   transition: opacity 2s;
@@ -317,20 +315,33 @@ body {
 
   .line {
     background: linear-gradient(to top, rgb(84, 84, 84), white);
-    bottom: 14%;
+    bottom: 15%;
   }
   .content-text {
     width: 80%;
-    bottom: 0;
-    right: 10%;
-    left: 10%;
-    text-align: left;
+    height: 50vh;
+    background: white;
+    color: black;
     position: absolute;
     transform: translateY(50%);
+    padding: 50px;
+    overflow-y: auto;
+    text-align: center;
+  }
+  .content-text a {
+    color: black;
   }
 
-  #hidden-text {
-    display: none;
+  #service,
+  #about {
+    overflow-y: auto;
+    max-height: 50vh;
+    padding: 50px;
+  }
+
+  #contact {
+    max-height: 40vh;
+    padding-top: 20%;
   }
 
   .content-container {
