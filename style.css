@@ -122,7 +122,7 @@ body {
 #about {
   z-index: 10;
   overflow-y: auto;
-  max-height: 50vh;
+  max-height: 51vh;
   padding: 20px;
   width: 35%;
 }
