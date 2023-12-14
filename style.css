@@ -350,11 +350,9 @@ body {
     padding: 0px;
   }
 
-  /* #contact {
-    width: 90%;
-    max-height: 40vh;
+  #contact {
     padding-top: 50%;
-  } */
+  }
 
   .content-container {
     position: relative;
