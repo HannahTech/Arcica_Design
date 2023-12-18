@@ -132,7 +132,7 @@ body {
   width: 25%;
 }
 
-#home {
+.menu-item:last-child {
   display: none;
 }
 .content-text a:hover {
@@ -306,6 +306,11 @@ body {
     margin: 0 10px;
     color: rgb(84, 84, 84);
   }
+
+  .menu-item:last-child {
+    display: inline;
+  }
+
   .container {
     height: 50%;
   }
@@ -358,10 +363,7 @@ body {
     padding-top: 50%;
     padding-bottom: 50%;
   }
-  #home {
-    display: block;
-    margin: 0 10px;
-  }
+
   .content-container {
     position: relative;
   }
