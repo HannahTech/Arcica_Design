@@ -293,15 +293,26 @@ document.addEventListener("DOMContentLoaded", function () {
       removeCurrentLineAndContent();
       showLine(event, contentId);
 
-      const targetSection = document.getElementById(contentId);
+      if (window.matchMedia("(orientation: portrait)").matches) {
+        window.location.href = this.getAttribute("href");
+        const targetSection = document.getElementById(contentId);
 
-      if (targetSection.scrollTop === 0) {
-        targetSection.scrollIntoView({ behavior: "smooth" });
+        if (targetSection.scrollTop === 0) {
+          targetSection.scrollIntoView({ behavior: "smooth" });
+        } else {
+          targetSection.scrollTop = 0;
+        }
       } else {
-        targetSection.scrollTop = 0;
+        const targetSection = document.getElementById(contentId);
+
+        if (targetSection.scrollTop === 0) {
+          targetSection.scrollIntoView({ behavior: "smooth" });
+        } else {
+          targetSection.scrollTop = 0;
+        }
+        clearTimeout(timeout);
+        hideElementsAfterDelay(hideTextTime);
       }
-      clearTimeout(timeout);
-      hideElementsAfterDelay(hideTextTime);
     });
   });
 });
