@@ -229,6 +229,12 @@ body {
   animation: slide 3s forwards, move-left 5s linear forwards;
 }
 
+.slideshow-slide.active img.fiximage {
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
 @keyframes slide {
   from {
     opacity: 0;

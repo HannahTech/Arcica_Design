@@ -78,6 +78,8 @@ const videos = allVideos
   .sort((a, b) => 0.5 - Math.random())
   .slice(0, imageCount);
 
+const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+
 const slideshowContainer = document.querySelector(".slideshow-container");
 let j = 0;
 
@@ -95,7 +97,7 @@ for (let i = 0; i < Math.max(images.length, videos.length); i++) {
     img.src = `images/${images[i]}`;
     img.classList.add("move_left");
     slide.appendChild(img);
-  } else if (i % 3 == 2) {
+  } else if (i % 3 == 2 && !isPortrait) {
     const video = document.createElement("video");
     video.src = `videos/1080/${videos[j]}`;
 
@@ -107,7 +109,13 @@ for (let i = 0; i < Math.max(images.length, videos.length); i++) {
     video.playsinline = true;
     slide.appendChild(video);
     j++;
+  } else if (i % 3 == 2 && isPortrait) {
+    const img = document.createElement("img");
+    img.src = `images/${images[i]}`;
+    img.classList.add("fiximage");
+    slide.appendChild(img);
   }
+
   slideshowContainer.appendChild(slide);
 }
 // console.log(slideshowContainer.childNodes.length);
@@ -119,6 +127,8 @@ function showSlides() {
     slides[i].classList.remove("active");
     slides[i].querySelectorAll("img.overlay").forEach((img) => img.remove());
     slides[i].querySelectorAll("img.move_left").forEach((img) => img.remove());
+    slides[i].querySelectorAll("img.fiximage").forEach((img) => img.remove());
+
     const videos = slides[i].querySelectorAll("video");
     for (let j = 0; j < videos.length; j++) {
       videos[j].pause();
@@ -155,7 +165,7 @@ function showSlides() {
     currentSlide.appendChild(move_left);
     fadeIn(move_left, 1500);
     setTimeout(showSlides, 5000);
-  } else if (slideIndex % 3 == 0) {
+  } else if (slideIndex % 3 == 0 && !isPortrait) {
     const currentVideo = currentSlide.querySelectorAll("video")[0];
     currentVideo.style.display = "block";
     currentVideo.play();
@@ -167,6 +177,14 @@ function showSlides() {
         showSlides();
       });
     }, 5000);
+  } else if (slideIndex % 3 == 0 && isPortrait) {
+    const fiximage = document.createElement("img");
+    fiximage.classList.add("fiximage");
+    fiximage.src = `images/${images[slideIndex - 1]}`;
+    fiximage.style.opacity = "0";
+    currentSlide.appendChild(fiximage);
+    fadeIn(fiximage, 1500);
+    setTimeout(showSlides, 5000);
   }
 }
 
@@ -295,24 +313,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (window.matchMedia("(orientation: portrait)").matches) {
         window.location.href = this.getAttribute("href");
-        const targetSection = document.getElementById(contentId);
-
-        if (targetSection.scrollTop === 0) {
-          targetSection.scrollIntoView({ behavior: "smooth" });
-        } else {
-          targetSection.scrollTop = 0;
-        }
-      } else {
-        const targetSection = document.getElementById(contentId);
-
-        if (targetSection.scrollTop === 0) {
-          targetSection.scrollIntoView({ behavior: "smooth" });
-        } else {
-          targetSection.scrollTop = 0;
-        }
-        clearTimeout(timeout);
-        hideElementsAfterDelay(hideTextTime);
       }
+      const targetSection = document.getElementById(contentId);
+
+      if (targetSection.scrollTop === 0) {
+        targetSection.scrollIntoView({ behavior: "smooth" });
+      } else {
+        targetSection.scrollTop = 0;
+      }
+      clearTimeout(timeout);
+      hideElementsAfterDelay(hideTextTime);
     });
   });
 });
