@@ -252,9 +252,10 @@ let timeout;
 let currentLine = null;
 let currentContent = null;
 let lineTimeout;
-let hideTabsTime = 20000;
-let hideTextTime = 30000;
+let hideTabsTime = 2000;
+let hideTextTime = 3000;
 let screenMobile = 768;
+let isContentDisplayed = false;
 
 function showElements() {
   menu.classList.remove("hide");
@@ -262,7 +263,7 @@ function showElements() {
 }
 
 function hideElements() {
-  if (window.innerWidth > screenMobile) {
+  if (window.innerWidth > screenMobile && !isContentDisplayed) {
     menu.classList.add("hide");
     social.classList.add("hide");
   }
@@ -348,6 +349,9 @@ function removeCurrentLineAndContent() {
     currentContent.style.opacity = "0";
     currentContent.classList.add("hidden");
     currentContent = null;
+    // if (isPortrait) {
+    //   window.location.href = "index.html";
+    // }
   }
 }
 
@@ -384,11 +388,36 @@ function showLine(event, contentId) {
     content.style.opacity = "1";
   }, 100);
 
+  content.addEventListener("mouseenter", function () {
+    clearTimeout(lineTimeout);
+    clearTimeout(timeout);
+    isContentDisplayed = true;
+    lineTimeout = setTimeout(function () {
+      line.style.opacity = "0";
+      content.style.opacity = "0";
+      content.classList.add("hidden");
+      currentLine = null;
+      currentContent = null;
+    }, 5000);
+  });
+
+  content.addEventListener("mouseleave", function () {
+    lineTimeout = setTimeout(function () {
+      line.style.opacity = "0";
+      content.style.opacity = "0";
+      content.classList.add("hidden");
+      currentLine = null;
+      currentContent = null;
+      isContentDisplayed = false;
+    }, hideTextTime);
+  });
+
   lineTimeout = setTimeout(function () {
     line.style.opacity = "0";
     content.style.opacity = "0";
     content.classList.add("hidden");
     currentLine = null;
     currentContent = null;
+    isContentDisplayed = false;
   }, hideTextTime);
 }
