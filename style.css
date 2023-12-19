@@ -346,6 +346,11 @@ body {
     min-height: 50%;
   }
 
+  .content-text::-webkit-scrollbar-thumb {
+    background-color: rgb(250, 100, 0);
+    border-radius: 10px;
+  }
+
   .line {
     /* background: linear-gradient(to top, rgb(84, 84, 84), white);
     bottom: 15%; */
