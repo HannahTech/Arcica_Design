@@ -132,8 +132,17 @@ body {
   width: 25%;
 }
 
-.menu-item:last-child {
+.home-item {
   display: none;
+  position: relative;
+  margin: 0 25px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 580;
+  letter-spacing: 3.75px;
+  z-index: 100;
 }
 .content-text a:hover {
   cursor: pointer;
@@ -313,8 +322,11 @@ body {
     color: rgb(84, 84, 84);
   }
 
-  .menu-item:last-child {
+  .home-item {
     display: inline;
+    font-size: 20px;
+    margin: 0 10px;
+    color: rgb(84, 84, 84);
   }
 
   .container {
