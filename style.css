@@ -371,7 +371,7 @@ body {
   #service,
   #about,
   #contact {
-    width: 86%;
+    width: 77%;
     overflow-y: auto;
     max-height: 55vh;
     padding: 50px;
