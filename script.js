@@ -252,8 +252,8 @@ let timeout;
 let currentLine = null;
 let currentContent = null;
 let lineTimeout;
-let hideTabsTime = 2000;
-let hideTextTime = 3000;
+let hideTabsTime = 20000;
+let hideTextTime = 30000;
 let screenMobile = 768;
 let isContentDisplayed = false;
 
@@ -398,7 +398,7 @@ function showLine(event, contentId) {
       content.classList.add("hidden");
       currentLine = null;
       currentContent = null;
-    }, 5000);
+    }, 50000);
   });
 
   content.addEventListener("mouseleave", function () {
