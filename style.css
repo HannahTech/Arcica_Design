@@ -344,6 +344,7 @@ body {
   .slideshow-slide.active img.move_left {
     width: 130%;
     min-height: 50%;
+    animation: slide 3s forwards, move-left 5s linear forwards;
   }
 
   .content-text::-webkit-scrollbar-thumb {
