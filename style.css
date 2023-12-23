@@ -293,6 +293,9 @@ body {
     color: rgb(84, 84, 84);
     z-index: 10;
     white-space: nowrap;
+    background-color: #fff;
+    height: 14%;
+    width: 100%;
   }
 
   .logo span {
@@ -405,6 +408,8 @@ body {
     height: 6%;
     width: 100%;
     flex-direction: row;
+    background-color: #fff;
+    padding-top: 27%;
   }
 
   .social-icon {
