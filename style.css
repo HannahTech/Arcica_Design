@@ -220,6 +220,7 @@ body {
 .slideshow-slide.active video {
   z-index: 2;
   opacity: 1;
+  transition: opacity 2s;
 }
 
 .slideshow-slide.active img.overlay {

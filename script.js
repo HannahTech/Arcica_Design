@@ -124,23 +124,30 @@ const slides = document.getElementsByClassName("slideshow-slide");
 
 function showSlides() {
   for (let i = 0; i < slides.length; i++) {
-    slides[i].classList.remove("active");
-    slides[i].querySelectorAll("img.overlay").forEach((img) => img.remove());
-    slides[i].querySelectorAll("img.move_left").forEach((img) => img.remove());
-    slides[i].querySelectorAll("img.fiximage").forEach((img) => img.remove());
+    const prevtSlide = slides[i];
+    const overlayImages = prevtSlide.querySelectorAll("img.overlay");
+    const moveLeftImages = prevtSlide.querySelectorAll("img.move_left");
+    const fixImages = prevtSlide.querySelectorAll("img.fiximage");
+    const videos = prevtSlide.querySelectorAll("video");
 
-    const videos = slides[i].querySelectorAll("video");
-    for (let j = 0; j < videos.length; j++) {
-      videos[j].pause();
-      videos[j].currentTime = 0;
-      videos[j].style.opacity = "0";
-    }
+    prevtSlide.opacity = "0";
+    prevtSlide.transition = "opacity 2s";
+    prevtSlide.classList.remove("active");
+    overlayImages.forEach((img) => img.remove());
+    moveLeftImages.forEach((img) => img.remove());
+    fixImages.forEach((img) => img.remove());
+
+    videos.forEach((video) => {
+      video.pause();
+      video.currentTime = 0;
+      video.style.opacity = "0";
+    });
   }
+
   slideIndex++;
   if (slideIndex > slides.length) {
     slideIndex = 1;
   }
-
   const currentSlide = slides[slideIndex - 1];
   currentSlide.classList.add("active");
 
@@ -151,6 +158,7 @@ function showSlides() {
     overlay.style.opacity = "0";
     currentSlide.appendChild(overlay);
     fadeIn(overlay, 1500);
+
     // setTimeout(function () {
     //   fadeOut(currentSlide, 200, function () {
     //     showSlides();
