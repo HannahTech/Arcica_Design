@@ -448,3 +448,11 @@ body {
     bottom: 15%;
   }
 }
+
+@media (max-width: 1000px) and (orientation: landscape) {
+  body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+}
