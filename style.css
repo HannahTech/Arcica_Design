@@ -448,9 +448,3 @@ body {
     bottom: 15%;
   }
 }
-
-@media only screen and (max-width: 1000px) {
-  body {
-    overflow: hidden;
-  }
-}
