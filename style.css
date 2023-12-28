@@ -277,6 +277,18 @@ body {
 }
 
 @media (orientation: portrait) {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(250, 100, 0);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: rgb(100, 100, 100);
+  }
   html,
   body {
     background-color: #fff;
@@ -284,6 +296,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    scrollbar-color: rgb(250, 100, 0) rgb(100, 100, 100);
   }
 
   .logo {
