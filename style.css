@@ -302,16 +302,17 @@ body {
 
   .logo {
     position: absolute;
-    top: 2%;
+    height: 11.5%;
+    width: 100%;
+    top: 0;
     left: 50%;
+    padding: 3.5%;
     transform: translateX(-50%);
     text-align: center;
     color: rgb(84, 84, 84);
     z-index: 10;
     white-space: nowrap;
     background-color: #fff;
-    height: 11.5%;
-    width: 100%;
   }
 
   .logo span {
@@ -396,10 +397,12 @@ body {
   #service,
   #about,
   #contact {
-    width: 76%;
+    width: 95%;
     overflow-y: auto;
     max-height: 75vh;
-    padding: 50px;
+    padding: 25px;
+    z-index: 8;
+    padding-top: 30%;
   }
 
   #contact {
