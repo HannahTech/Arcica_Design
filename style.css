@@ -357,7 +357,6 @@ body {
     left: 0;
     width: 100%;
     height: 78.5%;
-    transition: opacity 3s;
   }
 
   .slideshow-slide.active img.move_left {
