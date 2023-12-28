@@ -410,6 +410,10 @@ body {
     padding-bottom: 50%;
   }
 
+  .seperate-line {
+    display: block;
+  }
+
   .content-container {
     position: relative;
   }
