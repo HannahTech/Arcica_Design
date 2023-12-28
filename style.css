@@ -1,6 +1,7 @@
 @font-face {
   font-family: "ISOCPEUR";
   src: url("ISOCPEUR.ttf") format("truetype");
+  font-display: swap;
 }
 
 html,
