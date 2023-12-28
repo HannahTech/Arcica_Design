@@ -311,6 +311,12 @@ document.addEventListener("click", function (event) {
 
 // Menu Content
 document.addEventListener("DOMContentLoaded", function () {
+  checkFullScreen();
+
+  window.addEventListener("resize", function () {
+    checkFullScreen();
+  });
+
   const menuLinks = document.querySelectorAll(".menu-item");
   menuLinks.forEach(function (link) {
     link.addEventListener("click", function (event) {
@@ -335,6 +341,47 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+function checkFullScreen() {
+  const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+  const isFullScreenCapable =
+    document.fullscreenEnabled ||
+    document.webkitFullscreenEnabled ||
+    document.mozFullScreenEnabled ||
+    document.msFullscreenEnabled;
+
+  if (window.innerWidth < 1000 && !isPortrait && isFullScreenCapable) {
+    enterFullScreen();
+  } else {
+    exitFullScreen();
+  }
+}
+
+function enterFullScreen() {
+  const element = document.documentElement;
+
+  if (element.requestFullscreen) {
+    element.requestFullscreen();
+  } else if (element.webkitRequestFullscreen) {
+    element.webkitRequestFullscreen();
+  } else if (element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if (element.msRequestFullscreen) {
+    element.msRequestFullscreen();
+  }
+}
+
+function exitFullScreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  } else if (document.mozCancelFullScreen) {
+    document.mozCancelFullScreen();
+  } else if (document.msExitFullscreen) {
+    document.msExitFullscreen();
+  }
+}
 
 const contactLinks = document.querySelectorAll("#contact a");
 contactLinks.forEach(function (link) {
