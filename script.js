@@ -31,6 +31,17 @@ const allImages = [
   "TED-9823S2.jpg",
   "TED-9835S2.jpg",
   "TED179-8264S2a.jpg",
+  "69ST-01-sam01 ali2.jpg",
+  "74HL-04-sam01.jpg",
+  "DSC_0569-Enhanced-NR-sam01.jpg",
+  "DSC_3254-Enhanced-NR-sam01.jpg",
+  "DSC_3525-Enhanced-NR-sam01.jpg",
+  "DSC_4546-Enhanced-NR-sam01.jpg",
+  "DSC_6537-Enhanced-NR_1-sam01-Ali01a.jpg",
+  "DSC_6994-Enhanced-NR-sam01.jpg",
+  "DSC_7217-Enhanced-NR-sam01.jpg",
+  "DSC_8871-Enhanced-NR-sam01.jpg",
+  "LINKEDIN-01.jpg",
 ];
 
 const images = allImages
