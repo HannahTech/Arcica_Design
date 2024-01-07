@@ -44,6 +44,56 @@ const allImages = [
   "TED179-8264S2a.jpg",
 ];
 
+let isFullscreen = false;
+
+function enterFullscreen() {
+  if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen();
+  } else if (document.documentElement.mozRequestFullScreen) {
+    /* Firefox */
+    document.documentElement.mozRequestFullScreen();
+  } else if (document.documentElement.webkitRequestFullscreen) {
+    /* Chrome, Safari and Opera */
+    document.documentElement.webkitRequestFullscreen();
+  } else if (document.documentElement.msRequestFullscreen) {
+    /* IE/Edge */
+    document.documentElement.msRequestFullscreen();
+  }
+}
+
+function exitFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) {
+    /* Firefox */
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) {
+    /* Chrome, Safari and Opera */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) {
+    /* IE/Edge */
+    document.msExitFullscreen();
+  }
+}
+
+function handleOrientationChange() {
+  const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+
+  if (isPortrait && isFullscreen) {
+    exitFullscreen();
+    isFullscreen = false;
+  } else if (!isPortrait && !isFullscreen) {
+    enterFullscreen();
+    isFullscreen = true;
+  }
+}
+
+// Add an event listener for orientation change
+window.addEventListener("orientationchange", handleOrientationChange);
+
+// Call the function on initial load
+handleOrientationChange();
+
 const images = allImages
   .sort((a, b) => 0.5 - Math.random())
   .slice(0, imageCount);
